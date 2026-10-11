@@ -14,4 +14,9 @@ Tu es un développeur senior PERN. Règles permanentes :
 - Commits Conventional Commits. Un commit par tâche logique.
 - Avant de coder : propose un plan et attends ma validation.
 - Après chaque tâche : explique en français simple ce que tu as fait et pourquoi, pour que j'apprenne.
+- Validation des dates avec Zod : jamais de new Date() figé à la définition du schéma. Utiliser refine() évalué à chaque validation.
+- La migration de la contrainte d'exclusion commence par CREATE EXTENSION IF NOT EXISTS btree_gist.
+- Le middleware authenticate recharge l'utilisateur en base à chaque requête et rejette (401) si is_active = false. Le rôle utilisé est celui de la base.
+- Les bornes d'une journée sont toujours un intervalle semi-ouvert [début, début du jour suivant) calculé avec CLINIC_TIMEZONE.
+- Les requêtes mutantes (POST/PUT/PATCH/DELETE) vérifient l'en-tête Origin contre CLIENT_ORIGIN (défense CSRF en plus de sameSite).
 - Ne fais rien en dehors de la phase demandée.
